@@ -1,0 +1,12 @@
+{
+  "name": "reminders-automation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Sync a Notion reminders data source to Google Calendar.",
+  "scripts": {
+    "auth:google": "node src/googleAuth.js",
+    "sync:once": "node src/index.js --once",
+    "sync:watch": "node src/index.js"
+  }
+}
