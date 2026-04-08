@@ -65,7 +65,35 @@ Continuous polling sync:
 npm run sync:watch
 ```
 
-Default polling is every 60 seconds. Change that with `SYNC_INTERVAL_SECONDS`.
+Default polling is every 10 seconds. Change that with `SYNC_INTERVAL_SECONDS`.
+
+## 5. Run in the background on macOS
+
+This repo includes a `launchd` agent plist at `launchd/com.danabriner.notion-reminders-sync.plist`.
+
+Install and start it:
+
+```bash
+mkdir -p ~/.config/reminders-automation ~/.logs ~/Library/LaunchAgents
+cp launchd/com.danabriner.notion-reminders-sync.plist ~/Library/LaunchAgents/
+launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.danabriner.notion-reminders-sync.plist 2>/dev/null || true
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.danabriner.notion-reminders-sync.plist
+launchctl kickstart -k gui/$(id -u)/com.danabriner.notion-reminders-sync
+```
+
+Useful checks:
+
+```bash
+npm run sync:status
+npm run sync:logs
+npm run sync:logs:error
+```
+
+Stop it:
+
+```bash
+launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.danabriner.notion-reminders-sync.plist
+```
 
 ## Notes
 

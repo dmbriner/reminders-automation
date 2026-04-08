@@ -7,6 +7,9 @@
   "scripts": {
     "auth:google": "node src/googleAuth.js",
     "sync:once": "node src/index.js --once",
-    "sync:watch": "node src/index.js"
+    "sync:watch": "node src/index.js",
+    "sync:status": "launchctl print gui/$(id -u)/com.danabriner.notion-reminders-sync",
+    "sync:logs": "tail -n 100 .logs/launchd.out.log",
+    "sync:logs:error": "tail -n 100 .logs/launchd.err.log"
   }
 }

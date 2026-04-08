@@ -1,4 +1,5 @@
 .env
 .tokens/
 .state/
+.logs/
 node_modules/

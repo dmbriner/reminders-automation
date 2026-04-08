@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>com.danabriner.notion-reminders-sync</string>
+
+    <key>ProgramArguments</key>
+    <array>
+      <string>/opt/homebrew/bin/node</string>
+      <string>/Users/danabriner/Desktop/Projects/reminders-automation/src/index.js</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/danabriner/Desktop/Projects/reminders-automation</string>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/danabriner/Desktop/Projects/reminders-automation/.logs/launchd.out.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/danabriner/Desktop/Projects/reminders-automation/.logs/launchd.err.log</string>
+  </dict>
+</plist>
